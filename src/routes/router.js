@@ -9,6 +9,9 @@ import TestamentAdd from "../pages/testament/testamentAdd";
 const AppRouter = () => {
   return (
     <Routes>
+      {/* default */}
+      <Route path={route.default} element={<Home />} />
+
       {/* 홈 */}
       <Route path={route.home} element={<Home />} />
 

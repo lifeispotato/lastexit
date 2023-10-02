@@ -1,4 +1,7 @@
 export const route = {
+  // 기본
+  default: "/",
+
   // 홈
   home: "/home",
 
