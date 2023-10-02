@@ -5,10 +5,19 @@ function PageTop(props) {
   return (
     <>
       <PageTopWrapper style={{ background: `url(${props.bg}) no-repeat` }}>
-        <img style={{ width: "24px", height: "24px", margin: "18px 0 24px 0" }} src="/assets/imgs/pageTop/goBack.svg" />
+        <img
+          style={{ width: "24px", height: "24px", margin: "18px 0 24px 0" }}
+          src="/assets/imgs/pageTop/goBack.svg"
+          alt=""
+        />
         <div style={{ display: "flex", alignItems: "center", gap: "6px", marginBottom: "6px" }}>
           <PageTopTitle>{props.title}</PageTopTitle>
-          <img style={{ width: "18px", height: "18px" }} src="/assets/imgs/pageTop/qna.svg" onClick={props.onClick} />
+          <img
+            style={{ width: "18px", height: "18px" }}
+            src="/assets/imgs/pageTop/qna.svg"
+            onClick={props.onClick}
+            alt=""
+          />
         </div>
         <PageTopContent>{props.content}</PageTopContent>
       </PageTopWrapper>

@@ -1,7 +1,5 @@
-import styled from "styled-components";
 import MainLayout from "../../component/atoms/layout/mainLayout";
 import MainText from "../../component/atoms/text/mainText";
-import FootNav from "../../component/organisms/footNav";
 import PageTop from "../../component/organisms/pageTop";
 import ContentLayout from "../../component/atoms/layout/contentLayout";
 import Modal from "../../component/templates/modal";
@@ -36,7 +34,11 @@ function Testament() {
             [개인금고] 메뉴에서 확인해주세요!
           </MainText>
         </ContentLayout>
-        <img src="/assets/imgs/page-add-btn.svg" style={{ position: "absolute", bottom: "45px", right: "0px" }} />
+        <img
+          src="/assets/imgs/page-add-btn.svg"
+          style={{ position: "absolute", bottom: "45px", right: "0px" }}
+          alt=""
+        />
       </MainLayout>
       {modalOpen ? (
         <Modal

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import styled from "styled-components";
 
 function MainInput({ type, placeholder, value, onChange, onClick, disabled, style, dataPlaceholder, onKeyDown, step }) {

@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import MainLayout from "../../component/atoms/layout/mainLayout";
 import MainText from "../../component/atoms/text/mainText";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
@@ -7,7 +6,7 @@ import { route } from "../../routes/route";
 
 function FootNav() {
   const navigate = useNavigate();
-  const [navList, setNavList] = useState([
+  const [navList] = useState([
     {
       title: "홈",
       src: "/assets/imgs/footNav/home-default.svg",
@@ -39,8 +38,8 @@ function FootNav() {
     <FootNavWrapper>
       {navList.map((item, index) => {
         return (
-          <Footer onClick={() => navigate(item.navigation)}>
-            <img style={{ width: "24px", height: "24px" }} src={item.src} />
+          <Footer onClick={() => navigate(item.navigation)} key={index}>
+            <img style={{ width: "24px", height: "24px" }} src={item.src} alt="" />
             <FooterText>{item.title}</FooterText>
           </Footer>
         );

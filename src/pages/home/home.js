@@ -9,7 +9,7 @@ function Home() {
       <MainLayout>
         <HomeBg>
           <div style={{ display: "flex", alignItems: "flex-start", gap: "24px", paddingTop: "155px" }}>
-            <img src="/assets/imgs/home/profile.svg" />
+            <img src="/assets/imgs/home/profile.svg" alt="" />
             <MainText style={{ fontSize: "24px", fontWeight: "600", lineHeight: "140%", color: "#ffffff" }}>
               오늘 남기고 싶은
               <br />

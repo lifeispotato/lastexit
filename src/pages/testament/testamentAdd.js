@@ -2,15 +2,12 @@ import styled from "styled-components";
 import MainLayout from "../../component/atoms/layout/mainLayout";
 import MainText from "../../component/atoms/text/mainText";
 import ContentLayout from "../../component/atoms/layout/contentLayout";
-import { useState } from "react";
 import DetailGoBack from "../../component/molecules/detailGoBack";
 import MainInput from "../../component/atoms/input/mainInput";
 import TextArea from "../../component/atoms/input/textArea";
 import FootBtn from "../../component/organisms/footBtn";
 
 function TestamentAdd() {
-  const [modalOpen, setModalOpen] = useState(false);
-
   return (
     <>
       <MainLayout>

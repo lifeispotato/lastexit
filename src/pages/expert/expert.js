@@ -1,4 +1,3 @@
-import styled from "styled-components";
 import MainLayout from "../../component/atoms/layout/mainLayout";
 import PageTop from "../../component/organisms/pageTop";
 import { useState } from "react";
@@ -52,7 +51,7 @@ function Expert() {
                     style={{ position: "relative", border: `${menu === item.id ? "4px solid #0694d1" : ""}` }}
                     onClick={() => (menu === index ? setMenu(-1) : setMenu(item.id))}
                   >
-                    <img className="expert-ico" src={item.src} />
+                    <img className="expert-ico" src={item.src} alt="" />
                     <span className="expert-list-title" style={{ color: "#191919" }}>
                       {item.title}
                     </span>

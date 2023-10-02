@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import styled from "styled-components";
 import MainText from "../atoms/text/mainText";
 
@@ -12,6 +12,7 @@ function Modal(props) {
           src="/assets/imgs/modal/x.svg"
           style={{ position: "absolute", top: "12px", right: "12px" }}
           onClick={props.onClick}
+          alt=""
         />
       </ModalBox>
     </ModalWrapper>

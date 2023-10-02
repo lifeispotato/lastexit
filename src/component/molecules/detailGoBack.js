@@ -5,7 +5,11 @@ import MainText from "../atoms/text/mainText";
 function DetailGoBack(props) {
   return (
     <DetailGoBackWrapper>
-      <img src="/assets/imgs/pageTop/goBack-black.svg" style={{ position: "absolute", top: "16px", left: "16px" }} />
+      <img
+        src="/assets/imgs/pageTop/goBack-black.svg"
+        style={{ position: "absolute", top: "16px", left: "16px" }}
+        alt=""
+      />
       <GoBackTitle>{props.title}</GoBackTitle>
     </DetailGoBackWrapper>
   );
