@@ -44,10 +44,3 @@ function TestamentDetail() {
 }
 
 export default TestamentDetail;
-
-const InputTitle = styled(MainText).attrs((props) => {})`
-  color: #191919;
-  font-size: 15px;
-  font-weight: 600;
-  line-height: 21.25px;
-`;
