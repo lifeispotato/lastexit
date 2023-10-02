@@ -9,7 +9,7 @@ import FootBtn from "../../component/organisms/footBtn";
 import { useNavigate } from "react-router-dom";
 import { route } from "../../routes/route";
 
-function TestamentAdd() {
+function TestamentEdit() {
   const navigate = useNavigate();
 
   return (
@@ -32,7 +32,7 @@ function TestamentAdd() {
   );
 }
 
-export default TestamentAdd;
+export default TestamentEdit;
 
 const InputTitle = styled(MainText).attrs((props) => {})`
   color: #191919;

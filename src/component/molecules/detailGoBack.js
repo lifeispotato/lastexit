@@ -1,14 +1,18 @@
 import React from "react";
 import styled from "styled-components";
 import MainText from "../atoms/text/mainText";
+import { useNavigate } from "react-router-dom";
 
 function DetailGoBack(props) {
+  const navigate = useNavigate();
+
   return (
-    <DetailGoBackWrapper>
+    <DetailGoBackWrapper style={props.style}>
       <img
         src="/assets/imgs/pageTop/goBack-black.svg"
-        style={{ position: "absolute", top: "16px", left: "16px" }}
+        style={{ position: "absolute", top: "21px", left: "16px" }}
         alt=""
+        onClick={() => navigate(-1)}
       />
       <GoBackTitle>{props.title}</GoBackTitle>
     </DetailGoBackWrapper>

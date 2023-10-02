@@ -1,7 +1,9 @@
 import styled from "styled-components";
 import MainText from "../../component/atoms/text/mainText";
+import { useNavigate } from "react-router-dom";
 
 function PageTop(props) {
+  const navigate = useNavigate();
   return (
     <>
       <PageTopWrapper style={{ background: `url(${props.bg}) no-repeat` }}>
@@ -9,6 +11,7 @@ function PageTop(props) {
           style={{ width: "24px", height: "24px", margin: "18px 0 24px 0" }}
           src="/assets/imgs/pageTop/goBack.svg"
           alt=""
+          onClick={() => props.goBackClick || navigate(-1)}
         />
         <div style={{ display: "flex", alignItems: "center", gap: "6px", marginBottom: "6px" }}>
           <PageTopTitle>{props.title}</PageTopTitle>

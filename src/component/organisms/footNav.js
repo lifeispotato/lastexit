@@ -1,36 +1,34 @@
 import styled from "styled-components";
 import MainText from "../../component/atoms/text/mainText";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { route } from "../../routes/route";
 
 function FootNav() {
   const navigate = useNavigate();
+  const location = useLocation();
   const [navList] = useState([
     {
       title: "홈",
       src: "/assets/imgs/footNav/home-default.svg",
+      ac_src: "/assets/imgs/footNav/home-ac.svg",
       navigation: route.home,
     },
     {
-      title: "홈",
-      src: "/assets/imgs/footNav/home-default.svg",
+      title: "금고",
+      src: "/assets/imgs/footNav/lock-default.svg",
+      ac_src: "/assets/imgs/footNav/lock-ac.svg",
+      navigation: route.coffer,
+    },
+    {
+      title: "서재",
+      src: "/assets/imgs/footNav/paper-default.svg",
       navigation: route.home,
     },
     {
-      title: "홈",
-      src: "/assets/imgs/footNav/home-default.svg",
-      navigation: route.home,
-    },
-    {
-      title: "홈",
-      src: "/assets/imgs/footNav/home-default.svg",
-      navigation: route.home,
-    },
-    {
-      title: "홈",
-      src: "/assets/imgs/footNav/home-default.svg",
-      navigation: route.home,
+      title: "전문가",
+      src: "/assets/imgs/footNav/expert-default.svg",
+      navigation: route.expert,
     },
   ]);
 
@@ -39,7 +37,11 @@ function FootNav() {
       {navList.map((item, index) => {
         return (
           <Footer onClick={() => navigate(item.navigation)} key={index}>
-            <img style={{ width: "24px", height: "24px" }} src={item.src} alt="" />
+            <img
+              style={{ width: "24px", height: "24px" }}
+              src={location.pathname === item.navigation ? item.ac_src : item.src}
+              alt=""
+            />
             <FooterText>{item.title}</FooterText>
           </Footer>
         );
@@ -68,6 +70,7 @@ const Footer = styled.div.attrs((props) => {})`
   flex-direction: column;
   align-items: center;
   gap: 7px;
+  cursor: pointer;
 `;
 
 const FooterText = styled(MainText).attrs((props) => {})`
