@@ -1,4 +1,3 @@
-import styled from "styled-components";
 import MainLayout from "../../component/atoms/layout/mainLayout";
 import MainText from "../../component/atoms/text/mainText";
 import ContentLayout from "../../component/atoms/layout/contentLayout";
