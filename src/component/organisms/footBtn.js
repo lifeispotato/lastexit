@@ -1,9 +1,6 @@
 import styled from "styled-components";
-import { useNavigate } from "react-router-dom";
 
 function FootBtn(props) {
-  const navigate = useNavigate();
-
   return (
     <FootBtnWrapper>
       <FootBtnBtn>{props.title}</FootBtnBtn>
