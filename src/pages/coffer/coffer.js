@@ -58,8 +58,9 @@ export default Coffer;
 const PageTopWrapper = styled.div.attrs((props) => {})`
   width: 100%;
   height: 180px;
-  background: url("/assets/imgs/coffer/coffer-bg.png") no-repeat;
-  background-size: 100% 100%;
+  background: url("/assets/imgs/coffer/coffer-bg.png");
+  background-size: cover;
+  background-position: top;
   padding: 0 16px;
   display: flex;
   flex-direction: column;

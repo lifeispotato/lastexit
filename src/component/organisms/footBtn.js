@@ -13,7 +13,7 @@ export default FootBtn;
 const FootBtnWrapper = styled.div.attrs((props) => {})`
   width: 100%;
   height: 91px;
-  position: fixed;
+  position: sticky;
   bottom: 0;
   display: flex;
   justify-content: center;

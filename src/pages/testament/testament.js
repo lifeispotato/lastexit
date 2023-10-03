@@ -15,7 +15,8 @@ function Testament() {
     <>
       <MainLayout>
         <PageTop
-          bg={"assets/imgs/testament/testament-bg.png"}
+          qa={true}
+          bg={"/assets/imgs/testament/testament-bg.png"}
           title={"유언"}
           content={
             <>
@@ -24,8 +25,10 @@ function Testament() {
               작성하고 보관할 수 있습니다
             </>
           }
-          onClick={() => setModalOpen(true)}
-          goBackClick={navigate(route.home)}
+          onClick={() => {
+            setModalOpen(true);
+          }}
+          goBackClick={"home"}
         />
         <ContentLayout>
           <div
@@ -70,7 +73,9 @@ function Testament() {
           content={
             "유언방식을 알아보고 유언장 문건을 자동 생성하여 법적효력이 있는 유언장을 작성할 수 있습니다. 모든 내용은 간단한 메모를 남기듯 편하게 작성해  보시고 장기적으로 보존할 내용은 안전한 개인금고에  보관하십시오."
           }
-          onClick={() => setModalOpen(false)}
+          onClick={() => {
+            setModalOpen(false);
+          }}
         />
       ) : (
         ""

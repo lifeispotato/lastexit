@@ -66,7 +66,7 @@ const HomeBg = styled.div.attrs((props) => {})`
   height: 313px;
   background: url("/assets/imgs/home/home-bg.png") center center no-repeat;
   background-size: 100% 100%;
-  padding: 0 16px;
+  padding: 0 4.27%;
 `;
 
 const QuickMenuWrapper = styled.div.attrs((props) => {})`

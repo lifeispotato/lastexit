@@ -16,4 +16,9 @@ export const route = {
 
   //전문가
   expert: "/expert",
+  expert_photo: "/expert/photo",
+  expert_inheritance: "/expert/inheritance",
+  expert_nursing: "/expert/nursing",
+  expert_funeral: "/expert/funeral",
+  contact: "/expert/contact",
 };
