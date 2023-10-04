@@ -14,28 +14,38 @@ function FuneralExpert() {
     {
       title: "보람상조",
       tel: "1588-7979",
+      src: "/assets/imgs/expert/funeral-expert-1.png",
     },
     {
       title: "프리드라이프",
       tel: "1588-3740",
+      src: "/assets/imgs/expert/funeral-expert-2.png",
     },
     {
       title: "예다함",
       tel: "1566-6644",
+      src: "/assets/imgs/expert/funeral-expert-3.png",
     },
     {
       title: "별이되어 상조",
       tel: "1600-6340",
+      src: "/assets/imgs/expert/funeral-expert-4.png",
     },
     {
       title: "예담라이프",
       tel: "1660-0959",
+      src: "/assets/imgs/expert/funeral-expert-5.png",
     },
     {
       title: "에노스 장례",
       tel: "010-2229-0320",
+      src: "/assets/imgs/expert/funeral-expert-6.png",
     },
   ]);
+
+  const onErrorImg = (e) => {
+    e.target.src = "/assets/imgs/expert/error-img.png";
+  };
 
   return (
     <>
@@ -66,27 +76,43 @@ function FuneralExpert() {
                   boxShadow: "0px 0px 9px 0px rgba(0, 0, 0, 0.20)",
                   padding: "16px",
                   marginBottom: "12px",
+                  display: "flex",
+                  justifyContent: "space-between",
+                  alignItems: "center",
+                  gap: "20px",
                 }}
                 onClick={() => navigate(route.testament_detail)}
               >
-                <MainText
-                  style={{
-                    color: "#191919",
-                    fontSize: "18px",
-                    fontWeight: "600",
-                    lineHeight: "23px",
-                    marginBottom: "9px",
-                  }}
-                >
-                  {item.title}
-                </MainText>
-                <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
-                  <MainText style={{ color: "#333", fontSize: "14px", fontWeight: "400", lineHeight: "23px" }}>
-                    전화
+                <div>
+                  <MainText
+                    style={{
+                      color: "#191919",
+                      fontSize: "18px",
+                      fontWeight: "600",
+                      lineHeight: "23px",
+                      marginBottom: "9px",
+                    }}
+                  >
+                    {item.title}
                   </MainText>
-                  <MainText style={{ color: "#999", fontSize: "14px", fontWeight: "400", lineHeight: "23px" }}>
-                    {item.tel}
-                  </MainText>
+                  <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+                    <MainText
+                      style={{ color: "#333", fontSize: "14px", fontWeight: "400", lineHeight: "23px", width: "28px" }}
+                    >
+                      전화
+                    </MainText>
+                    <MainText style={{ color: "#999", fontSize: "14px", fontWeight: "400", lineHeight: "23px" }}>
+                      {item.tel}
+                    </MainText>
+                  </div>
+                </div>
+                <div>
+                  <img
+                    style={{ width: "80px", height: "80px", borderRadius: "7px" }}
+                    src={item.src}
+                    alt=""
+                    onError={onErrorImg}
+                  />
                 </div>
               </div>
             );

@@ -10,6 +10,7 @@ import MainInput from "../../component/atoms/input/mainInput";
 import { useState } from "react";
 import MainText from "../../component/atoms/text/mainText";
 import ContactModal from "../../component/templates/contactModal";
+import { toast } from "react-toastify";
 
 function Contact() {
   const navigate = useNavigate();
@@ -65,6 +66,8 @@ function Contact() {
           onClick={() => {
             if (info.name !== "" && info.tel !== "" && info.content !== "") {
               setModalOpen(true);
+            } else {
+              toast("내용을 모두 입력해주세요");
             }
           }}
         />
