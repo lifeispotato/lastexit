@@ -2,10 +2,16 @@ import styled from "styled-components";
 import MainText from "../../component/atoms/text/mainText";
 import { useState } from "react";
 
-function CofferTab() {
+function CofferTab(props) {
   const [navList] = useState([
     {
+      id: 0,
       title: "편지 유언",
+      // navigation: route.home,
+    },
+    {
+      id: 1,
+      title: "서재",
       // navigation: route.home,
     },
   ]);
@@ -14,8 +20,14 @@ function CofferTab() {
     <CofferTabWrapper>
       {navList.map((item, index) => {
         return (
-          <CofferTabList key={index}>
-            <CofferTabText style={{ color: "#0A94D1", fontWeight: "600", borderBottom: "3px solid #0A94D1" }}>
+          <CofferTabList key={index} onClick={() => props.setTab(index)}>
+            <CofferTabText
+              style={{
+                color: `${item.id === props.tab ? "#0A94D1" : ""}`,
+                fontWeight: `${item.id === props.tab ? "#600" : ""}`,
+                borderBottom: `${item.id === props.tab ? "3px solid #0A94D1" : ""}`,
+              }}
+            >
               {item.title}
             </CofferTabText>
           </CofferTabList>

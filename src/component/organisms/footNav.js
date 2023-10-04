@@ -22,8 +22,8 @@ function FootNav() {
     },
     {
       title: "서재",
-      src: "/assets/imgs/footNav/paper-default.svg",
-      navigation: route.home,
+      src: "/assets/imgs/footNav/library-default.svg",
+      navigation: route.library,
     },
     {
       title: "전문가",
