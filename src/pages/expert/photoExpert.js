@@ -15,6 +15,7 @@ function PhotoExpert() {
       title: "영정사진관",
       location: "서울 강동구 양재대로 1491 202호",
       tel: "0507-1424-7812",
+      src: "/assets/imgs/expert/photo-expert-1.jpeg",
     },
     {
       title: "가야영정사진",
