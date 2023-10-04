@@ -66,7 +66,7 @@ function Coffer() {
                 padding: "16px",
                 marginBottom: "24px",
               }}
-              onClick={() => navigate(route.testament_detail)}
+              onClick={() => navigate(route.library_detail)}
             >
               <MainText
                 style={{
