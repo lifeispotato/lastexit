@@ -6,9 +6,11 @@ import { route } from "../../routes/route";
 import FootNav from "../../component/organisms/footNav";
 import CofferTab from "../../component/organisms/cofferTab";
 import styled from "styled-components";
+import { useState } from "react";
 
 function Coffer() {
   const navigate = useNavigate();
+  const [tab, setTab] = useState(0);
 
   return (
     <>
@@ -24,28 +26,64 @@ function Coffer() {
           </PageTopContent>
         </PageTopWrapper>
         <ContentLayout>
-          <CofferTab />
-          <div
-            style={{
-              width: "100%",
-              height: "84px",
-              borderRadius: "8px",
-              backgroundColor: "#fff",
-              boxShadow: "0px 0px 9px 0px rgba(0, 0, 0, 0.20)",
-              padding: "16px",
-              marginBottom: "24px",
-            }}
-            onClick={() => navigate(route.testament_datail)}
-          >
-            <MainText
-              style={{ color: "#191919", fontSize: "18px", fontWeight: "600", lineHeight: "23px", marginBottom: "6px" }}
+          <CofferTab tab={tab} setTab={setTab} />
+          {tab === 0 ? (
+            <div
+              style={{
+                width: "100%",
+                height: "84px",
+                borderRadius: "8px",
+                backgroundColor: "#fff",
+                boxShadow: "0px 0px 9px 0px rgba(0, 0, 0, 0.20)",
+                padding: "16px",
+                marginBottom: "24px",
+              }}
+              onClick={() => navigate(route.testament_detail)}
             >
-              2023.09.15 작성 유언
-            </MainText>
-            <MainText style={{ color: "#999", fontSize: "14px", fontWeight: "400", lineHeight: "23px" }}>
-              2023.09.15
-            </MainText>
-          </div>
+              <MainText
+                style={{
+                  color: "#191919",
+                  fontSize: "18px",
+                  fontWeight: "600",
+                  lineHeight: "23px",
+                  marginBottom: "6px",
+                }}
+              >
+                2023.09.15 작성 유언
+              </MainText>
+              <MainText style={{ color: "#999", fontSize: "14px", fontWeight: "400", lineHeight: "23px" }}>
+                2023.09.15
+              </MainText>
+            </div>
+          ) : (
+            <div
+              style={{
+                width: "100%",
+                height: "84px",
+                borderRadius: "8px",
+                backgroundColor: "#fff",
+                boxShadow: "0px 0px 9px 0px rgba(0, 0, 0, 0.20)",
+                padding: "16px",
+                marginBottom: "24px",
+              }}
+              onClick={() => navigate(route.library_detail)}
+            >
+              <MainText
+                style={{
+                  color: "#191919",
+                  fontSize: "18px",
+                  fontWeight: "600",
+                  lineHeight: "23px",
+                  marginBottom: "6px",
+                }}
+              >
+                소중했던 하루 하루
+              </MainText>
+              <MainText style={{ color: "#999", fontSize: "14px", fontWeight: "400", lineHeight: "23px" }}>
+                2023.09.15
+              </MainText>
+            </div>
+          )}
         </ContentLayout>
         <FootNav />
       </MainLayout>

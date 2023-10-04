@@ -13,6 +13,10 @@ import Contact from "../pages/expert/contact";
 import InheritanceExpert from "../pages/expert/inheritanceExpert";
 import NursingExpert from "../pages/expert/nursingExpert";
 import FuneralExpert from "../pages/expert/funeralExpert";
+import Library from "../pages/library/library";
+import LibraryAdd from "../pages/library/libraryAdd";
+import LibraryDetail from "../pages/library/libraryDetail";
+import LibraryEdit from "../pages/library/libraryEdit";
 
 const AppRouter = () => {
   return (
@@ -30,7 +34,13 @@ const AppRouter = () => {
       <Route path={route.testament} element={<Testament />} />
       <Route path={route.testament_add} element={<TestamentAdd />} />
       <Route path={route.testament_edit} element={<TestamentEdit />} />
-      <Route path={route.testament_datail} element={<TestamentDetail />} />
+      <Route path={route.testament_detail} element={<TestamentDetail />} />
+
+      {/* 서재 */}
+      <Route path={route.library} element={<Library />} />
+      <Route path={route.library_add} element={<LibraryAdd />} />
+      <Route path={route.library_edit} element={<LibraryEdit />} />
+      <Route path={route.library_detail} element={<LibraryDetail />} />
 
       {/* 전문가 */}
       <Route path={route.expert} element={<Expert />} />

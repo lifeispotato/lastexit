@@ -73,7 +73,7 @@ function InheritanceExpert() {
                   padding: "16px",
                   marginBottom: "12px",
                 }}
-                onClick={() => navigate(route.testament_datail)}
+                onClick={() => navigate(route.testament_detail)}
               >
                 <MainText
                   style={{

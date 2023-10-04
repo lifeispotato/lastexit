@@ -12,7 +12,13 @@ export const route = {
   testament: "/testament",
   testament_add: "/testament/add",
   testament_edit: "/testament/edit",
-  testament_datail: "/testament/detail",
+  testament_detail: "/testament/detail",
+
+  //서재
+  library: "/library",
+  library_add: "/library/add",
+  library_detail: "/library/detail",
+  library_edit: "/library/edit",
 
   //전문가
   expert: "/expert",

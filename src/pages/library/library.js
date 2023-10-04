@@ -7,7 +7,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { route } from "../../routes/route";
 
-function Testament() {
+function Library() {
   const [modalOpen, setModalOpen] = useState(false);
   const navigate = useNavigate();
 
@@ -16,13 +16,13 @@ function Testament() {
       <MainLayout>
         <PageTop
           qa={true}
-          bg={"/assets/imgs/testament/testament-bg.png"}
-          title={"유언"}
+          bg={"/assets/imgs/library/library-bg.png"}
+          title={"서재"}
           content={
             <>
-              법적 효력이 있는 유언장을
+              가족, 지인 그리고 나에게 전하고 싶은
               <br />
-              작성하고 보관할 수 있습니다
+              메세지와 진심을 미리 남길 수 있습니다
             </>
           }
           onClick={() => {
@@ -41,12 +41,12 @@ function Testament() {
               padding: "16px",
               marginBottom: "24px",
             }}
-            onClick={() => navigate(route.testament_detail)}
+            onClick={() => navigate(route.library_detail)}
           >
             <MainText
               style={{ color: "#191919", fontSize: "18px", fontWeight: "600", lineHeight: "23px", marginBottom: "6px" }}
             >
-              2023.09.15 작성 유언
+              소중했던 하루 하루
             </MainText>
             <MainText style={{ color: "#999", fontSize: "14px", fontWeight: "400", lineHeight: "23px" }}>
               2023.09.15
@@ -64,14 +64,14 @@ function Testament() {
           src="/assets/imgs/page-add-btn.svg"
           style={{ position: "absolute", bottom: "45px", right: "0px" }}
           alt=""
-          onClick={() => navigate(route.testament_add)}
+          onClick={() => navigate(route.library_add)}
         />
       </MainLayout>
       {modalOpen ? (
         <Modal
           title={"유언"}
           content={
-            "유언방식을 알아보고 유언장 문건을 자동 생성하여 법적효력이 있는 유언장을 작성할 수 있습니다. 모든 내용은 간단한 메모를 남기듯 편하게 작성해 보시고 장기적으로 보존할 내용은 안전한 개인금고에  보관하십시오."
+            "가족이나 친구 또는 나에게 전하고 싶은 글을 미리 남겨둘 수  있습니다. 모든 내용은 간단한 메모를 남기듯 편하게 작성해 보시고 장기적으로 보존할 내용은 안전한 개인금고에  보관하십시오."
           }
           onClick={() => {
             setModalOpen(false);
@@ -84,4 +84,4 @@ function Testament() {
   );
 }
 
-export default Testament;
+export default Library;

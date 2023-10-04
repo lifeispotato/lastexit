@@ -9,30 +9,30 @@ import FootBtn from "../../component/organisms/footBtn";
 import { useNavigate } from "react-router-dom";
 import { route } from "../../routes/route";
 
-function TestamentEdit() {
+function LibraryEdit() {
   const navigate = useNavigate();
 
   return (
     <>
       <MainLayout>
-        <DetailGoBack title={"편지 유언 수정하기"} />
+        <DetailGoBack title={"글 수정하기"} />
         <ContentLayout>
           <div style={{ width: "100%", marginBottom: "15px" }}>
             <InputTitle style={{ marginBottom: "6px" }}>제목</InputTitle>
-            <MainInput type={"text"} placeholder={"유언 제목을 입력해주세요 (최대 15자)"} />
+            <MainInput type={"text"} placeholder={"글 제목을 입력해주세요 (최대 15자)"} />
           </div>
           <div style={{ width: "100%", marginBottom: "15px" }}>
             <InputTitle style={{ marginBottom: "6px" }}>상세내용</InputTitle>
             <TextArea placeholder={"상세 내용을 입력해주세요"} />
           </div>
         </ContentLayout>
-        <FootBtn title={"수정 완료"} onClick={() => navigate(route.testament)} />
+        <FootBtn title={"수정 완료"} onClick={() => navigate(route.library)} />
       </MainLayout>
     </>
   );
 }
 
-export default TestamentEdit;
+export default LibraryEdit;
 
 const InputTitle = styled(MainText).attrs((props) => {})`
   color: #191919;
