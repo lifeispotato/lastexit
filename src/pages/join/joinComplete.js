@@ -3,19 +3,12 @@ import FootBtn from "../../component/organisms/footBtn";
 import { useNavigate } from "react-router-dom";
 import ContentLayout from "../../component/atoms/layout/contentLayout";
 import styled from "styled-components";
-import MainInput from "../../component/atoms/input/mainInput";
 import { useState } from "react";
 import MainText from "../../component/atoms/text/mainText";
-import { toast } from "react-toastify";
 import { route } from "../../routes/route";
 
 function JoinComplete() {
   const navigate = useNavigate();
-  const [info, setInfo] = useState({
-    email: "",
-    name: "",
-    password: "",
-  });
 
   return (
     <>
@@ -46,10 +39,3 @@ function JoinComplete() {
 }
 
 export default JoinComplete;
-
-const InputTitle = styled(MainText).attrs((props) => {})`
-  color: #191919;
-  font-size: 15px;
-  font-weight: 600;
-  line-height: 21.25px;
-`;
