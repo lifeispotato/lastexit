@@ -2,8 +2,6 @@ import MainLayout from "../../component/atoms/layout/mainLayout";
 import FootBtn from "../../component/organisms/footBtn";
 import { useNavigate } from "react-router-dom";
 import ContentLayout from "../../component/atoms/layout/contentLayout";
-import styled from "styled-components";
-import { useState } from "react";
 import MainText from "../../component/atoms/text/mainText";
 import { route } from "../../routes/route";
 
