@@ -6,8 +6,8 @@ function ContactModal(props) {
   return (
     <ModalWrapper>
       <ModalBox>
-        <ModalTitle>상담이 접수 되었습니다</ModalTitle>
-        <ModalCaption>내용 확인 후 신속하게 답변드리겠습니다</ModalCaption>
+        <ModalTitle>{props.title || "상담이 접수 되었습니다"}</ModalTitle>
+        <ModalCaption>{props.text || "내용 확인 후 신속하게 답변드리겠습니다"}</ModalCaption>
         <ModalBtn onClick={props.onClick}>확인</ModalBtn>
       </ModalBox>
     </ModalWrapper>

@@ -4,9 +4,12 @@ import MainText from "../../component/atoms/text/mainText";
 import FootNav from "../../component/organisms/footNav";
 import { useNavigate } from "react-router-dom";
 import { route } from "../../routes/route";
+import { useState } from "react";
+import ContactModal from "../../component/templates/contactModal";
 
 function Home() {
   const navigate = useNavigate();
+  const [modalOpen, setModalOpen] = useState(false);
 
   return (
     <>
@@ -17,14 +20,22 @@ function Home() {
             <MainText style={{ fontSize: "24px", fontWeight: "600", lineHeight: "140%", color: "#ffffff" }}>
               오늘 남기고 싶은
               <br />
-              홍길동님의 이야기는
+              {localStorage.getItem("name") || "액시터"}님의 이야기는
               <br />
               무엇인가요?
             </MainText>
           </div>
         </HomeBg>
         <QuickMenuWrapper>
-          <QuickMenu onClick={() => navigate(route.testament)}>
+          <QuickMenu
+            onClick={() => {
+              if (!localStorage.getItem("name")) {
+                setModalOpen(true);
+              } else {
+                navigate(route.testament);
+              }
+            }}
+          >
             <div>
               <MainText
                 style={{
@@ -55,6 +66,18 @@ function Home() {
         </QuickMenuWrapper>
         <FootNav />
       </MainLayout>
+      {modalOpen ? (
+        <ContactModal
+          title={"회원 전용 서비스입니다"}
+          text={"회원가입 페이지로 이동합니다"}
+          onClick={() => {
+            setModalOpen(false);
+            navigate(route.join);
+          }}
+        />
+      ) : (
+        ""
+      )}
     </>
   );
 }

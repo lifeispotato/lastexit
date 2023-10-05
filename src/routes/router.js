@@ -17,6 +17,8 @@ import Library from "../pages/library/library";
 import LibraryAdd from "../pages/library/libraryAdd";
 import LibraryDetail from "../pages/library/libraryDetail";
 import LibraryEdit from "../pages/library/libraryEdit";
+import Join from "../pages/join/join";
+import JoinComplete from "../pages/join/joinComplete";
 
 const AppRouter = () => {
   return (
@@ -51,6 +53,10 @@ const AppRouter = () => {
 
       {/* 상담 */}
       <Route path={route.contact} element={<Contact />} />
+
+      {/* 회원가입 */}
+      <Route path={route.join} element={<Join />} />
+      <Route path={route.join_complete} element={<JoinComplete />} />
     </Routes>
   );
 };

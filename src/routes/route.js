@@ -27,4 +27,8 @@ export const route = {
   expert_nursing: "/expert/nursing",
   expert_funeral: "/expert/funeral",
   contact: "/expert/contact",
+
+  //회원가입
+  join: "/join",
+  join_complete: "/join/complete",
 };

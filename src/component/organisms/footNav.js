@@ -3,10 +3,13 @@ import MainText from "../../component/atoms/text/mainText";
 import { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { route } from "../../routes/route";
+import ContactModal from "../templates/contactModal";
 
 function FootNav() {
   const navigate = useNavigate();
   const location = useLocation();
+  const [modalOpen, setModalOpen] = useState(false);
+
   const [navList] = useState([
     {
       title: "홈",
@@ -33,20 +36,43 @@ function FootNav() {
   ]);
 
   return (
-    <FootNavWrapper>
-      {navList.map((item, index) => {
-        return (
-          <Footer onClick={() => navigate(item.navigation)} key={index}>
-            <img
-              style={{ width: "24px", height: "24px" }}
-              src={location.pathname === item.navigation ? item.ac_src : item.src}
-              alt=""
-            />
-            <FooterText>{item.title}</FooterText>
-          </Footer>
-        );
-      })}
-    </FootNavWrapper>
+    <>
+      <FootNavWrapper>
+        {navList.map((item, index) => {
+          return (
+            <Footer
+              onClick={() => {
+                if (item.navigation !== route.home && !localStorage.getItem("name")) {
+                  setModalOpen(true);
+                } else {
+                  navigate(item.navigation);
+                }
+              }}
+              key={index}
+            >
+              <img
+                style={{ width: "24px", height: "24px" }}
+                src={location.pathname === item.navigation ? item.ac_src : item.src}
+                alt=""
+              />
+              <FooterText>{item.title}</FooterText>
+            </Footer>
+          );
+        })}
+      </FootNavWrapper>
+      {modalOpen ? (
+        <ContactModal
+          title={"회원 전용 서비스입니다"}
+          text={"회원가입 페이지로 이동합니다"}
+          onClick={() => {
+            setModalOpen(false);
+            navigate(route.join);
+          }}
+        />
+      ) : (
+        ""
+      )}
+    </>
   );
 }
 

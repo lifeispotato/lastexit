@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 function FootBtn(props) {
   return (
-    <FootBtnWrapper onClick={props.onClick}>
+    <FootBtnWrapper style={{ ...props.style }} onClick={props.onClick}>
       <FootBtnBtn>{props.title}</FootBtnBtn>
     </FootBtnWrapper>
   );
