@@ -42,7 +42,7 @@ function FootNav() {
           return (
             <Footer
               onClick={() => {
-                if (item.navigation !== route.home && !localStorage.getItem("name")) {
+                if (item.navigation !== route.home && !sessionStorage.getItem("email")) {
                   setModalOpen(true);
                 } else {
                   navigate(item.navigation);
@@ -63,10 +63,10 @@ function FootNav() {
       {modalOpen ? (
         <ContactModal
           title={"회원 전용 서비스입니다"}
-          text={"회원가입 페이지로 이동합니다"}
+          text={"로그인 페이지로 이동합니다"}
           onClick={() => {
             setModalOpen(false);
-            navigate(route.join);
+            navigate(route.login);
           }}
         />
       ) : (

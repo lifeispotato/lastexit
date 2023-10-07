@@ -26,9 +26,9 @@ function JoinComplete() {
         </ContentLayout>
         <FootBtn
           style={{ position: "fixed" }}
-          title={"시작하기"}
+          title={"로그인 페이지로 이동"}
           onClick={() => {
-            navigate(route.home);
+            navigate(route.login);
           }}
         />
       </MainLayout>

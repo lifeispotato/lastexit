@@ -10,17 +10,60 @@ import ContactModal from "../../component/templates/contactModal";
 function Home() {
   const navigate = useNavigate();
   const [modalOpen, setModalOpen] = useState(false);
+  const [dropbox, setDropbox] = useState(false);
 
   return (
     <>
       <MainLayout>
         <HomeBg>
-          <div style={{ display: "flex", alignItems: "flex-start", gap: "24px", paddingTop: "155px" }}>
+          <div
+            style={{
+              display: "flex",
+              alignItems: "flex-start",
+              gap: "24px",
+              paddingTop: "155px",
+              position: "relative",
+            }}
+          >
+            <img
+              src="/assets/imgs/home/three-dot.svg"
+              alt=""
+              style={{ position: "absolute", top: "16px", right: "0" }}
+              onClick={() => {
+                setDropbox(!dropbox);
+              }}
+            />
+            {dropbox ? (
+              <div
+                style={{
+                  width: "30%",
+                  height: "48px",
+                  backgroundColor: "#ffffff",
+                  borderRadius: "4px",
+                  position: "absolute",
+                  top: "45px",
+                  right: "0",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  boxShadow: "0px 0px 9px 0px rgba(0, 0, 0, 0.20)",
+                }}
+                onClick={() => {
+                  sessionStorage.clear();
+                  navigate(route.login);
+                }}
+              >
+                <MainText style={{ fontSize: "16px", fontWeight: "700", color: "#555" }}>로그아웃</MainText>
+              </div>
+            ) : (
+              ""
+            )}
+
             <img src="/assets/imgs/home/profile.svg" alt="" />
             <MainText style={{ fontSize: "24px", fontWeight: "600", lineHeight: "140%", color: "#ffffff" }}>
               오늘 남기고 싶은
               <br />
-              {localStorage.getItem("name") || "액시터"}님의 이야기는
+              {sessionStorage.getItem("email") ? localStorage.getItem("name") : "액시터"}님의 이야기는
               <br />
               무엇인가요?
             </MainText>
@@ -29,7 +72,7 @@ function Home() {
         <QuickMenuWrapper>
           <QuickMenu
             onClick={() => {
-              if (!localStorage.getItem("name")) {
+              if (!sessionStorage.getItem("email")) {
                 setModalOpen(true);
               } else {
                 navigate(route.testament);
@@ -69,10 +112,10 @@ function Home() {
       {modalOpen ? (
         <ContactModal
           title={"회원 전용 서비스입니다"}
-          text={"회원가입 페이지로 이동합니다"}
+          text={"로그인 페이지로 이동합니다"}
           onClick={() => {
             setModalOpen(false);
-            navigate(route.join);
+            navigate(route.login);
           }}
         />
       ) : (

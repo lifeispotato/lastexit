@@ -29,6 +29,10 @@ export const route = {
   contact: "/expert/contact",
 
   //회원가입
+  login: "/login",
+  login_find_id: "/login/find-id",
+  login_find_pw: "/login/find-pw",
+  login_find_pw_complete: "/login/find-pw/complete",
   join: "/join",
   join_complete: "/join/complete",
 };

@@ -19,6 +19,10 @@ import LibraryDetail from "../pages/library/libraryDetail";
 import LibraryEdit from "../pages/library/libraryEdit";
 import Join from "../pages/join/join";
 import JoinComplete from "../pages/join/joinComplete";
+import Login from "../pages/login/login";
+import FindId from "../pages/login/findId";
+import FindPw from "../pages/login/findPw";
+import FindPwComplete from "../pages/login/findPwComplete";
 
 const AppRouter = () => {
   return (
@@ -55,6 +59,10 @@ const AppRouter = () => {
       <Route path={route.contact} element={<Contact />} />
 
       {/* 회원가입 */}
+      <Route path={route.login} element={<Login />} />
+      <Route path={route.login_find_id} element={<FindId />} />
+      <Route path={route.login_find_pw} element={<FindPw />} />
+      <Route path={route.login_find_pw_complete} element={<FindPwComplete />} />
       <Route path={route.join} element={<Join />} />
       <Route path={route.join_complete} element={<JoinComplete />} />
     </Routes>

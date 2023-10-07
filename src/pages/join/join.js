@@ -14,6 +14,7 @@ function Join() {
   const [info, setInfo] = useState({
     email: "",
     name: "",
+    phoneNumber: "",
     password: "",
   });
 
@@ -41,6 +42,14 @@ function Join() {
             />
           </div>
           <div style={{ width: "100%", marginBottom: "15px" }}>
+            <InputTitle style={{ marginBottom: "6px" }}>전화번호</InputTitle>
+            <MainInput
+              type={"text"}
+              placeholder={"전화번호를 입력해주세요"}
+              onChange={(e) => setInfo({ ...info, phoneNumber: e.target.value })}
+            />
+          </div>
+          <div style={{ width: "100%", marginBottom: "15px" }}>
             <InputTitle style={{ marginBottom: "6px" }}>비밀번호</InputTitle>
             <MainInput
               type={"password"}
@@ -52,9 +61,10 @@ function Join() {
         <FootBtn
           title={"가입하기"}
           onClick={() => {
-            if (info.name !== "" && info.email !== "" && info.password !== "") {
+            if (info.name !== "" && info.email !== "" && info.phoneNumber !== "" && info.password !== "") {
               localStorage.setItem("name", info.name);
               localStorage.setItem("email", info.email);
+              localStorage.setItem("phoneNumber", info.phoneNumber);
               localStorage.setItem("password", info.password);
               navigate(route.join_complete);
             } else {
