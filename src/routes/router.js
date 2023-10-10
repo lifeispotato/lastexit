@@ -23,6 +23,8 @@ import Login from "../pages/login/login";
 import FindId from "../pages/login/findId";
 import FindPw from "../pages/login/findPw";
 import FindPwComplete from "../pages/login/findPwComplete";
+import ExpertContact from "../pages/expert/expertContact";
+import ExpertPayment from "../pages/expert/expertPayment";
 
 const AppRouter = () => {
   return (
@@ -57,6 +59,8 @@ const AppRouter = () => {
 
       {/* 상담 */}
       <Route path={route.contact} element={<Contact />} />
+      <Route path={route.contact_expert} element={<ExpertContact />} />
+      <Route path={route.contact_payment} element={<ExpertPayment />} />
 
       {/* 회원가입 */}
       <Route path={route.login} element={<Login />} />

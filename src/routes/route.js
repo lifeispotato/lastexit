@@ -27,6 +27,8 @@ export const route = {
   expert_nursing: "/expert/nursing",
   expert_funeral: "/expert/funeral",
   contact: "/expert/contact",
+  contact_expert: "/expert/contact/expert",
+  contact_payment: "/expert/contact/payment",
 
   //회원가입
   login: "/login",

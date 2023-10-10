@@ -19,7 +19,7 @@ function JoinComplete() {
           <MainText
             style={{ fontSize: "16px", fontWeight: "400", lineHeight: "24px", color: "#555", textAlign: "center" }}
           >
-            이제 라스트액시트만의
+            이제 라스트엑시트만의
             <br />
             풍성한 혜택을 누려보세요
           </MainText>

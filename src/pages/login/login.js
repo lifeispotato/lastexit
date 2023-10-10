@@ -98,7 +98,7 @@ function Login() {
               backgroundColor: "#fff",
             }}
           >
-            특별한 유산이 처음이신가요?
+            라스트엑시트는 처음이신가요?
           </MainText>
           <JoinBtn onClick={() => navigate(route.join)}>이메일로 회원가입 하기</JoinBtn>
         </div>

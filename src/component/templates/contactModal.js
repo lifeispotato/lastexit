@@ -59,6 +59,7 @@ const ModalCaption = styled(MainText).attrs((props) => {})`
   font-weight: 400;
   line-height: 20px; /* 142.857% */
   margin-bottom: 40px;
+  text-align: center;
 `;
 
 const ModalBtn = styled.button.attrs((props) => {})`
