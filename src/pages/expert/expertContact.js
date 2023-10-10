@@ -7,7 +7,7 @@ import ContentLayout from "../../component/atoms/layout/contentLayout";
 import styled from "styled-components";
 import TextArea from "../../component/atoms/input/textArea";
 import MainInput from "../../component/atoms/input/mainInput";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import MainText from "../../component/atoms/text/mainText";
 import ContactModal from "../../component/templates/contactModal";
 import { toast } from "react-toastify";
@@ -21,10 +21,6 @@ function ExpertContact() {
     tel: "",
     content: "",
   });
-
-  useEffect(() => {
-    console.log(location.state.pay);
-  }, []);
 
   return (
     <>
