@@ -25,7 +25,7 @@ function More() {
             <MainText style={{ fontSize: "16px", fontWeight: "400", lineHeight: "23px", color: "#191919" }}>
               이용약관
             </MainText>
-            <img src="assets/imgs/more/more-arrow.svg" />
+            <img src="assets/imgs/more/more-arrow.svg" alt="" />
           </div>
           <div
             style={{ width: "100%", display: "flex", alignItems: "center", justifyContent: "space-between" }}
@@ -36,7 +36,7 @@ function More() {
             <MainText style={{ fontSize: "16px", fontWeight: "600", lineHeight: "23px", color: "#191919" }}>
               개인정보처리방침
             </MainText>
-            <img src="assets/imgs/more/more-arrow.svg" />
+            <img src="assets/imgs/more/more-arrow.svg" alt="" />
           </div>
           <div
             style={{ width: "100%", display: "flex", alignItems: "center", justifyContent: "space-between" }}
