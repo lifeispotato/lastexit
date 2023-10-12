@@ -2,12 +2,8 @@ import MainLayout from "../../component/atoms/layout/mainLayout";
 import MainText from "../../component/atoms/text/mainText";
 import ContentLayout from "../../component/atoms/layout/contentLayout";
 import DetailGoBack from "../../component/molecules/detailGoBack";
-import { useNavigate } from "react-router-dom";
-import { route } from "../../routes/route";
 
 function Terms() {
-  const navigate = useNavigate();
-
   return (
     <>
       <MainLayout>
