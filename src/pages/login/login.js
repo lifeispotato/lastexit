@@ -8,6 +8,7 @@ import { useState } from "react";
 import MainText from "../../component/atoms/text/mainText";
 import { toast } from "react-toastify";
 import { route } from "../../routes/route";
+import { idpw } from "../../util/idpw";
 
 function Login() {
   const navigate = useNavigate();
@@ -65,11 +66,11 @@ function Login() {
           title={"로그인"}
           onClick={() => {
             if (info.email !== "" && info.password !== "") {
-              if (info.email !== localStorage.getItem("email")) {
+              if (info.email !== idpw.email && info.email !== localStorage.getItem("email")) {
                 toast("아이디가 존재하지 않습니다");
                 return;
               }
-              if (info.password !== localStorage.getItem("password")) {
+              if (info.password !== localStorage.getItem("password") && info.password !== idpw.pw) {
                 toast("비밀번호가 틀렸습니다");
                 return;
               }

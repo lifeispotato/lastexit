@@ -63,7 +63,12 @@ function Home() {
             <MainText style={{ fontSize: "24px", fontWeight: "600", lineHeight: "140%", color: "#ffffff" }}>
               오늘 남기고 싶은
               <br />
-              {sessionStorage.getItem("email") ? localStorage.getItem("name") : "액시터"}님의 이야기는
+              {sessionStorage.getItem("email")
+                ? localStorage.getItem("name")
+                  ? localStorage.getItem("name")
+                  : "액시터"
+                : "액시터"}
+              님의 이야기는
               <br />
               무엇인가요?
             </MainText>
