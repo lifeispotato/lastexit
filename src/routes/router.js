@@ -25,6 +25,9 @@ import FindPw from "../pages/login/findPw";
 import FindPwComplete from "../pages/login/findPwComplete";
 import ExpertContact from "../pages/expert/expertContact";
 import ExpertPayment from "../pages/expert/expertPayment";
+import More from "../pages/more/more";
+import Terms from "../pages/more/terms";
+import Policy from "../pages/more/policy";
 
 const AppRouter = () => {
   return (
@@ -69,6 +72,11 @@ const AppRouter = () => {
       <Route path={route.login_find_pw_complete} element={<FindPwComplete />} />
       <Route path={route.join} element={<Join />} />
       <Route path={route.join_complete} element={<JoinComplete />} />
+
+      {/* 더보기 */}
+      <Route path={route.more} element={<More />} />
+      <Route path={route.terms} element={<Terms />} />
+      <Route path={route.policy} element={<Policy />} />
     </Routes>
   );
 };

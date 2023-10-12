@@ -37,4 +37,9 @@ export const route = {
   login_find_pw_complete: "/login/find-pw/complete",
   join: "/join",
   join_complete: "/join/complete",
+
+  //더보기
+  more: "/more",
+  terms: "/terms",
+  policy: "/policy",
 };

@@ -49,11 +49,10 @@ function Home() {
                   boxShadow: "0px 0px 9px 0px rgba(0, 0, 0, 0.20)",
                 }}
                 onClick={() => {
-                  sessionStorage.clear();
-                  navigate(route.login);
+                  navigate(route.more);
                 }}
               >
-                <MainText style={{ fontSize: "16px", fontWeight: "700", color: "#555" }}>로그아웃</MainText>
+                <MainText style={{ fontSize: "16px", fontWeight: "700", color: "#555" }}>더보기</MainText>
               </div>
             ) : (
               ""
