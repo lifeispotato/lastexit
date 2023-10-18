@@ -98,7 +98,7 @@ const PageTopWrapper = styled.div.attrs((props) => {})`
   height: 180px;
   background: url("/assets/imgs/coffer/coffer-bg.png");
   background-size: cover;
-  background-position: top;
+  background-position: center;
   padding: 0 16px;
   display: flex;
   flex-direction: column;

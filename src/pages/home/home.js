@@ -21,7 +21,7 @@ function Home() {
               display: "flex",
               alignItems: "flex-start",
               gap: "24px",
-              paddingTop: "155px",
+              paddingTop: "200px",
               position: "relative",
             }}
           >
@@ -133,7 +133,7 @@ export default Home;
 
 const HomeBg = styled.div.attrs((props) => {})`
   width: 100%;
-  height: 313px;
+  height: 357px;
   background: url("/assets/imgs/home/home-bg.png") center center no-repeat;
   background-size: 100% 100%;
   padding: 0 4.27%;

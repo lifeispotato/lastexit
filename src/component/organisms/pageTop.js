@@ -37,7 +37,7 @@ export default PageTop;
 
 const PageTopWrapper = styled.div.attrs((props) => {})`
   width: 100%;
-  height: 200px;
+  height: 220px;
   background-size: cover;
   background-position: bottom;
   padding: 0 16px;
