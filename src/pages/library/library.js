@@ -3,13 +3,20 @@ import MainText from "../../component/atoms/text/mainText";
 import PageTop from "../../component/organisms/pageTop";
 import ContentLayout from "../../component/atoms/layout/contentLayout";
 import Modal from "../../component/templates/modal";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { route } from "../../routes/route";
 
 function Library() {
   const [modalOpen, setModalOpen] = useState(false);
   const navigate = useNavigate();
+
+  const [list, setList] = useState([]);
+
+  useEffect(() => {
+    const arr = JSON.parse(localStorage.getItem("libraryList"));
+    setList(arr);
+  }, []);
 
   return (
     <>
@@ -31,29 +38,49 @@ function Library() {
           goBackClick={"home"}
         />
         <ContentLayout>
-          <div
-            style={{
-              width: "100%",
-              height: "84px",
-              borderRadius: "8px",
-              backgroundColor: "#fff",
-              boxShadow: "0px 0px 9px 0px rgba(0, 0, 0, 0.20)",
-              padding: "16px",
-              marginBottom: "24px",
-            }}
-            onClick={() => navigate(route.library_detail)}
-          >
-            <MainText
-              style={{ color: "#191919", fontSize: "18px", fontWeight: "600", lineHeight: "23px", marginBottom: "6px" }}
-            >
-              소중했던 하루 하루
-            </MainText>
-            <MainText style={{ color: "#999", fontSize: "14px", fontWeight: "400", lineHeight: "23px" }}>
-              2023.09.15
-            </MainText>
-          </div>
+          {list?.map((item, index) => {
+            return (
+              <div
+                style={{
+                  width: "100%",
+                  height: "84px",
+                  borderRadius: "8px",
+                  backgroundColor: "#fff",
+                  boxShadow: "0px 0px 9px 0px rgba(0, 0, 0, 0.20)",
+                  padding: "16px",
+                  marginBottom: "24px",
+                }}
+                onClick={() => navigate(route.library_detail + `/${index + 1}`)}
+              >
+                <MainText
+                  style={{
+                    color: "#191919",
+                    fontSize: "18px",
+                    fontWeight: "600",
+                    lineHeight: "23px",
+                    marginBottom: "6px",
+                  }}
+                >
+                  {item.title}
+                </MainText>
+                <MainText
+                  style={{ color: "#999", fontSize: "14px", fontWeight: "400", lineHeight: "23px" }}
+                >
+                  {item.time}
+                </MainText>
+              </div>
+            );
+          })}
+
           <MainText
-            style={{ color: "#999", textAlign: "center", fontSize: "14px", fontWeight: "400", lineHeight: "22px" }}
+            style={{
+              color: "#999",
+              textAlign: "center",
+              fontSize: "14px",
+              fontWeight: "400",
+              lineHeight: "22px",
+              marginBottom: "100px",
+            }}
           >
             개인금고에 저장한 게시물은
             <br />

@@ -44,14 +44,14 @@ const AppRouter = () => {
       {/* 유언 */}
       <Route path={route.testament} element={<Testament />} />
       <Route path={route.testament_add} element={<TestamentAdd />} />
-      <Route path={route.testament_edit} element={<TestamentEdit />} />
-      <Route path={route.testament_detail} element={<TestamentDetail />} />
+      <Route path={route.testament_edit + "/:id"} element={<TestamentEdit />} />
+      <Route path={route.testament_detail + "/:id"} element={<TestamentDetail />} />
 
       {/* 서재 */}
       <Route path={route.library} element={<Library />} />
       <Route path={route.library_add} element={<LibraryAdd />} />
-      <Route path={route.library_edit} element={<LibraryEdit />} />
-      <Route path={route.library_detail} element={<LibraryDetail />} />
+      <Route path={route.library_edit + "/:id"} element={<LibraryEdit />} />
+      <Route path={route.library_detail + "/:id"} element={<LibraryDetail />} />
 
       {/* 전문가 */}
       <Route path={route.expert} element={<Expert />} />

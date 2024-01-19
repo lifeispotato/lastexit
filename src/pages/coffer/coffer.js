@@ -6,11 +6,24 @@ import { route } from "../../routes/route";
 import FootNav from "../../component/organisms/footNav";
 import CofferTab from "../../component/organisms/cofferTab";
 import styled from "styled-components";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 function Coffer() {
   const navigate = useNavigate();
   const [tab, setTab] = useState(0);
+
+  const [testmentList, setTestmentList] = useState([]);
+  const [libraryList, setLibraryList] = useState([]);
+
+  useEffect(() => {
+    const arr = JSON.parse(localStorage.getItem("testamentList"));
+    setTestmentList(arr);
+  }, []);
+
+  useEffect(() => {
+    const arr = JSON.parse(localStorage.getItem("libraryList"));
+    setLibraryList(arr);
+  }, []);
 
   return (
     <>
@@ -28,61 +41,87 @@ function Coffer() {
         <ContentLayout>
           <CofferTab tab={tab} setTab={setTab} />
           {tab === 0 ? (
-            <div
-              style={{
-                width: "100%",
-                height: "84px",
-                borderRadius: "8px",
-                backgroundColor: "#fff",
-                boxShadow: "0px 0px 9px 0px rgba(0, 0, 0, 0.20)",
-                padding: "16px",
-                marginBottom: "24px",
-              }}
-              onClick={() => navigate(route.testament_detail)}
-            >
-              <MainText
-                style={{
-                  color: "#191919",
-                  fontSize: "18px",
-                  fontWeight: "600",
-                  lineHeight: "23px",
-                  marginBottom: "6px",
-                }}
-              >
-                2023.09.15 작성 유언
-              </MainText>
-              <MainText style={{ color: "#999", fontSize: "14px", fontWeight: "400", lineHeight: "23px" }}>
-                2023.09.15
-              </MainText>
-            </div>
+            <>
+              {testmentList?.map((item, index) => {
+                return (
+                  <div
+                    style={{
+                      width: "100%",
+                      height: "84px",
+                      borderRadius: "8px",
+                      backgroundColor: "#fff",
+                      boxShadow: "0px 0px 9px 0px rgba(0, 0, 0, 0.20)",
+                      padding: "16px",
+                      marginBottom: "24px",
+                    }}
+                    onClick={() => navigate(route.testament_detail + `/${index + 1}`)}
+                  >
+                    <MainText
+                      style={{
+                        color: "#191919",
+                        fontSize: "18px",
+                        fontWeight: "600",
+                        lineHeight: "23px",
+                        marginBottom: "6px",
+                      }}
+                    >
+                      {item.title}
+                    </MainText>
+                    <MainText
+                      style={{
+                        color: "#999",
+                        fontSize: "14px",
+                        fontWeight: "400",
+                        lineHeight: "23px",
+                      }}
+                    >
+                      {item.time}
+                    </MainText>
+                  </div>
+                );
+              })}
+            </>
           ) : (
-            <div
-              style={{
-                width: "100%",
-                height: "84px",
-                borderRadius: "8px",
-                backgroundColor: "#fff",
-                boxShadow: "0px 0px 9px 0px rgba(0, 0, 0, 0.20)",
-                padding: "16px",
-                marginBottom: "24px",
-              }}
-              onClick={() => navigate(route.library_detail)}
-            >
-              <MainText
-                style={{
-                  color: "#191919",
-                  fontSize: "18px",
-                  fontWeight: "600",
-                  lineHeight: "23px",
-                  marginBottom: "6px",
-                }}
-              >
-                소중했던 하루 하루
-              </MainText>
-              <MainText style={{ color: "#999", fontSize: "14px", fontWeight: "400", lineHeight: "23px" }}>
-                2023.09.15
-              </MainText>
-            </div>
+            <>
+              {libraryList?.map((item, index) => {
+                return (
+                  <div
+                    style={{
+                      width: "100%",
+                      height: "84px",
+                      borderRadius: "8px",
+                      backgroundColor: "#fff",
+                      boxShadow: "0px 0px 9px 0px rgba(0, 0, 0, 0.20)",
+                      padding: "16px",
+                      marginBottom: "24px",
+                    }}
+                    onClick={() => navigate(route.testament_detail + `/${index + 1}`)}
+                  >
+                    <MainText
+                      style={{
+                        color: "#191919",
+                        fontSize: "18px",
+                        fontWeight: "600",
+                        lineHeight: "23px",
+                        marginBottom: "6px",
+                      }}
+                    >
+                      {item.title}
+                    </MainText>
+                    <MainText
+                      style={{
+                        color: "#999",
+                        fontSize: "14px",
+                        fontWeight: "400",
+                        lineHeight: "23px",
+                      }}
+                    >
+                      {item.time}
+                    </MainText>
+                  </div>
+                );
+              })}
+            </>
           )}
         </ContentLayout>
         <FootNav />
