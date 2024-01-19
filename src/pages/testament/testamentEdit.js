@@ -25,6 +25,7 @@ function TestamentEdit() {
     setList(arr);
     setTitle(arr[itemIndex].title);
     setContent(arr[itemIndex].content);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
@@ -45,6 +46,7 @@ function TestamentEdit() {
 
     arr.splice(itemIndex, 1, obj);
     setList(arr);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [title, content]);
 
   const editFunc = () => {
