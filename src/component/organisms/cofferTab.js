@@ -14,6 +14,11 @@ function CofferTab(props) {
       title: "서재",
       // navigation: route.home,
     },
+    {
+      id: 2,
+      title: "재산",
+      // navigation: route.home,
+    },
   ]);
 
   return (

@@ -7,13 +7,18 @@ import FootNav from "../../component/organisms/footNav";
 import CofferTab from "../../component/organisms/cofferTab";
 import styled from "styled-components";
 import { useEffect, useState } from "react";
+import CofferModal from "../../component/templates/cofferModal";
 
 function Coffer() {
   const navigate = useNavigate();
   const [tab, setTab] = useState(0);
+  const [isOpen, setIsOpen] = useState(false);
 
   const [testmentList, setTestmentList] = useState([]);
   const [libraryList, setLibraryList] = useState([]);
+  const [propertyList, setPropertyList] = useState([]);
+
+  const [total, setTotal] = useState(0);
 
   useEffect(() => {
     const arr = JSON.parse(localStorage.getItem("testamentList"));
@@ -24,6 +29,32 @@ function Coffer() {
     const arr = JSON.parse(localStorage.getItem("libraryList"));
     setLibraryList(arr);
   }, []);
+
+  useEffect(() => {
+    priceAdd();
+  }, [isOpen]);
+
+  const priceAdd = () => {
+    let a = 0;
+    const arr = JSON.parse(localStorage.getItem("propertyList"));
+    setPropertyList(arr);
+
+    arr?.map((item) => {
+      a += Number(item.price);
+    });
+
+    setTotal(a);
+  };
+
+  const delPrice = (index) => {
+    const list = JSON.parse(localStorage.getItem("propertyList"));
+
+    list?.splice(index, 1);
+
+    localStorage.setItem("propertyList", JSON.stringify(list));
+
+    priceAdd();
+  };
 
   return (
     <>
@@ -81,7 +112,7 @@ function Coffer() {
                 );
               })}
             </>
-          ) : (
+          ) : tab === 1 ? (
             <>
               {libraryList?.map((item, index) => {
                 return (
@@ -122,10 +153,123 @@ function Coffer() {
                 );
               })}
             </>
+          ) : (
+            <>
+              <div style={{ width: "100%", display: "flex", justifyContent: "space-between", marginBottom: "20px" }}>
+                <MainText
+                  style={{
+                    minWidth: "50px",
+                    color: "#999",
+                    fontSize: "20px",
+                    fontWeight: "400",
+                    lineHeight: "23px",
+                  }}
+                >
+                  합계
+                </MainText>
+                <MainText
+                  style={{
+                    color: "#000",
+                    fontSize: "20px",
+                    fontWeight: "600",
+                    lineHeight: "23px",
+                  }}
+                >
+                  {total.toLocaleString("ko-KR")} 원
+                </MainText>
+              </div>
+
+              {/* list */}
+              <div style={{ width: "100%", marginBottom: "60px" }}>
+                {propertyList?.map((item, index) => {
+                  return (
+                    <div key={index} style={{ marginBottom: "10px" }}>
+                      <div style={{ width: "100%", display: "flex", justifyContent: "space-between" }}>
+                        <MainText
+                          style={{
+                            minWidth: "50px",
+                            color: "#999",
+                            fontSize: "14px",
+                            fontWeight: "400",
+                            lineHeight: "23px",
+                          }}
+                        >
+                          {item.title}
+                        </MainText>
+                        <div style={{ display: "flex", alignItems: "center", gap: "5px" }}>
+                          <MainText
+                            style={{
+                              color: "#999",
+                              fontSize: "16px",
+                              fontWeight: "600",
+                              lineHeight: "23px",
+                            }}
+                          >
+                            {Number(item.price)?.toLocaleString("ko-KR")}원
+                          </MainText>
+                          <div
+                            style={{
+                              width: "20px",
+                              height: "20px",
+                              backgroundColor: "#dddddd",
+                              borderRadius: "20px",
+                              display: "flex",
+                              alignItems: "center",
+                              justifyContent: "center",
+                            }}
+                            onClick={() => {
+                              delPrice(index);
+                            }}
+                          >
+                            <MainText
+                              style={{
+                                color: "#000",
+                                fontSize: "20px",
+                                fontWeight: "600",
+                                marginTop: "-3px",
+                              }}
+                            >
+                              -
+                            </MainText>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+
+              <div
+                style={{
+                  width: "30px",
+                  height: "30px",
+                  backgroundColor: "#dddddd",
+                  borderRadius: "20px",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                }}
+                onClick={() => {
+                  setIsOpen(true);
+                }}
+              >
+                <MainText
+                  style={{
+                    color: "#000",
+                    fontSize: "26px",
+                    fontWeight: "600",
+                    marginTop: "-3px",
+                  }}
+                >
+                  +
+                </MainText>
+              </div>
+            </>
           )}
         </ContentLayout>
         <FootNav />
       </MainLayout>
+      {isOpen ? <CofferModal setIsOpen={setIsOpen} /> : ""}
     </>
   );
 }
