@@ -41,6 +41,7 @@ function Coffer() {
 
     arr?.map((item) => {
       a += Number(item.price);
+      return;
     });
 
     setTotal(a);
